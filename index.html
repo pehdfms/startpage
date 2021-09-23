@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&amp;display=swap" rel="stylesheet">
+
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Startpage</title>
+
+        <script>
+            function startTime() {
+                const currentDate = new Date();
+
+                let hours   = padTime(currentDate.getHours());
+                let minutes = padTime(currentDate.getMinutes());
+                let seconds = padTime(currentDate.getSeconds());
+
+                let year  = currentDate.getYear() + 1900;
+                let month = padTime(currentDate.getMonth());
+                let day   = padTime(currentDate.getDay());
+
+                date = year + "/" + month + "/" + day;
+                time = hours + ":" + minutes + ":" + seconds;
+
+                document.getElementById("time").innerHTML = date + "<br>" + time;
+
+                setTimeout(startTime, 1000);
+            }
+
+            function padTime(timeUnit) {
+                if (timeUnit < 10) {
+                    return "0" + timeUnit;
+                }
+
+                return timeUnit;
+            }
+        </script>
+    </head>
+
+    <body onload="startTime()">
+        <h1 id="welcomeMessage">
+            「Startpage」にようこそ！
+        </h1>
+
+        <h2 id="time"></h2>
+
+        <div id="websites">
+            <ul>
+                <strong>- 日本語 -</strong>
+                <li>
+                    <a href="#">となりのヤングジャンプ</a>
+                </li>
+                <li>
+                    <a href="#">昨日 Grammar Guide</a>
+                </li>
+                <li>
+                    <a href="#">悪戯ネコ</a>
+                </li>
+                <li>
+                    <a href="#">辞書</a>
+                </li>
+            </ul>
+
+            <ul>
+                <strong>- Entertainment -</strong>
+                <li>
+                    <a href="#">双葉チャンネル</a>
+                </li>
+                <li>
+                    <a href="#">The Daily WTF</a>
+                </li>
+                <li>
+                    <a href="#">ニコニコ</a>
+                </li>
+                <li>
+                    <a href="#">YouTube</a>
+                </li>
+            </ul>
+
+            <ul>
+                <strong>- Programming -</strong>
+                <li>
+                    <a href="#">Self-taught CS Curriculum</a>
+                </li>
+                <li>
+                    <a href="#">Project Based Learning</a>
+                </li>
+                <li>
+                    <a href="#">Teach yourself CS</a>
+                </li>
+                <li>
+                    <a href="#">Vim Magic</a>
+                </li>
+                <li>
+                    <a href="#">Github</a>
+                </li>
+            </ul>
+
+            <ul>
+                <strong>- Utilities -</strong>
+                <li>
+                    <a href="#">Electronic Library</a>
+                </li>
+                <li>
+                    <a href="#">Texthooker</a>
+                </li>
+                <li>
+                    <a href="#">Vimwiki</a>
+                </li>
+                <li>
+                    <a href="#">Nyaa.si</a>
+                </li>
+            </ul>
+
+            <ul>
+                <strong>- University -</strong>
+                <li>
+                    <a href="">Spreadsheet Monitor</a>
+                </li>
+                <li>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrsV9y_LcmNmedzFzWZ3nAC-aVR4O6F9ufw1a3BoSsjN-N_A/viewform">Form Monitor</a>
+                </li>
+                <li>
+                    <a href="https://uniamerica.br/">Uniamerica</a>
+                </li>
+                <li>
+                    <a href="https://jacad.uniamerica.br/academico/aluno-v2">Jacad</a>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
