@@ -1,0 +1,10 @@
+{
+    "name": "Custom Startpage",
+    "description": "Custom Startpage for Web Browsers",
+    "version": "1.0",
+    "incognito": "split",
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "manifest-version": 2
+}
