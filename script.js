@@ -1,3 +1,5 @@
+window.addEventListener("load", startTime())
+
 function startTime() {
     const currentDate = new Date();
 
@@ -12,8 +14,7 @@ function startTime() {
     date = year + "/" + month + "/" + day;
     time = hours + ":" + minutes + ":" + seconds;
 
-    document.getElementById("time").innerHTML = date + "<br>" + time;
-
+    setClock(date, time);
     setTimeout(startTime, 1000);
 }
 
@@ -23,4 +24,8 @@ function padTime(timeUnit) {
     }
 
     return timeUnit;
+}
+
+function setClock(date, time) {
+    document.getElementById("time").innerHTML = date + "<br>" + time;
 }
